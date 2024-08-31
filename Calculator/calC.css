@@ -1,0 +1,106 @@
+.mainDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.mainDiv * {
+    margin: 0;
+    padding: 0;
+}
+
+.appTile {
+    display: inline-block;
+    border: 1px solid black;
+    width: 300px;
+    height: 500px;
+    background-color: #000;
+    border-radius: 16px;
+}
+
+.output {
+    display: inline-block;
+    /* border: 2px solid white; */
+    width: 98.5%;
+    height: 34%;
+    color: orange;
+    font-family: oswald;
+    font-size: 2rem;
+    /* From https://css.glass */
+    background: rgba(162, 255, 5, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(162, 255, 5, 0.3);
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#result {
+    margin: 10px;
+}
+
+.input {
+    display: inline-block;
+    /* border: 2px solid white; */
+    width: 98.5%;
+    height: 64%;
+    margin-top: 15px;
+}
+
+#clear,
+#reminder,
+#erase {
+    background-color: rgb(126, 126, 126);
+}
+
+#division,
+#multiplication,
+#substraction,
+#substraction,
+#addition,
+#equals {
+    background-color: orange;
+    color: #000;
+    font-size: 1.5rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.r1btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    /* border: 1px solid white; */
+    width: 25vw;
+    height: 9vh;
+    margin: 5px;
+    background-color: rgb(66, 66, 66);
+    border-radius: 25px;
+    font-family: oswald;
+    font-weight: 700;
+}
+
+.r1btns:hover{
+    color: gold;
+    box-shadow: 0 2px 1px 0 rgb(255, 136, 0);
+    animation: anim-shadow .3s forwards;
+}
+
+@keyFrames anim-shadow{
+    100%{
+    box-shadow: 0px 0px 5px 1px rgb(209, 4, 158);
+
+    }
+}
