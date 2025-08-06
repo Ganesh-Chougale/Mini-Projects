@@ -1,0 +1,59 @@
+<body style="background-color: #000000; display: flex;">
+    
+     <canvas id="ctx" width="600" height="500" style="border: 1px solid #000000; background-color: #ffffff;"></canvas>
+     
+     <script>
+         const ccc = document.getElementById('ctx').getContext('2d');
+
+    let sprite = new Image();
+    sprite.src = "./logo.png";
+    let x = 0;
+    let y = 0;
+    let leftWall = 0;
+    let upWall = 0;
+    let rightWall = 540; // width - image width(60)
+    let downWall = 460;  // height - image height(40)
+
+    function getRandomSpeed() {
+        return (Math.random() < 0.5 ? -1 : 1) * (Math.random() * 2 + 1.5);
+    }
+
+    let kickX = getRandomSpeed();
+    let kickY = getRandomSpeed();
+
+    sprite.onload = function () {
+        // setInterval(tvScreenSaver, 60);
+        requestAnimationFrame(tvScreenSaver)
+    };
+
+    function tvScreenSaver() {
+        ccc.clearRect(0, 0, 600, 500);          // clear last frame
+        ccc.drawImage(sprite, x, y, 60, 40);    // paint next frame
+
+        x += kickX;
+        y += kickY;
+
+        if (x < leftWall) {     // Hit left wall
+            x = leftWall;
+            kickX = getRandomSpeed();
+        }
+        
+        if (x > rightWall) {    // Hit right wall
+            x = rightWall;
+            kickX = -getRandomSpeed();
+        }
+        
+        if (y < upWall) {   // Hit top wall
+            y = upWall;
+            kickY = getRandomSpeed();
+        }
+        
+        if (y > downWall) { // Hit bottom wall
+            y = downWall;
+            kickY = -getRandomSpeed();
+        }
+        requestAnimationFrame(tvScreenSaver);
+    }
+
+</script>
+</body>
